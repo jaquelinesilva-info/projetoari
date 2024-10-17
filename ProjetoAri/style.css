@@ -16,13 +16,19 @@ body, html {
 }
 
 .sidebar {
-    background-color: #2E7D32;
+    background-color: #259055;
     color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 250px;
+    transition: width 0.3s ease; /* Transição suave */
+    position: relative; /* Para o posicionamento correto do botão */
+}
+
+.sidebar.retraida {
+    width: 100px; /* Largura reduzida quando retraída */
 }
 
 .logo {
@@ -33,6 +39,10 @@ body, html {
 .logo img {
     width: 80px;
     height: auto;
+}
+
+.sidebar.retraida .logo img {
+    width: 40px; /* Imagem menor quando retraída */
 }
 
 .logo h2 {
@@ -52,7 +62,14 @@ body, html {
 }
 
 .sidebar ul li:hover {
-    background-color: #1B5E20;
+    background-color: #259055;
+}
+
+/* Oculta o texto da logo e os itens da lista quando retraída */
+.sidebar.retraida .logo h4,
+.sidebar.retraida .logo h2,
+.sidebar.retraida ul li {
+    display: none;
 }
 
 .main-content {
@@ -62,13 +79,20 @@ body, html {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    transition: margin-left 0.3s ease; /* Transição suave para o conteúdo */
+}
+
+.main-content.retraida {
+    margin-left: 0px; /* Move o conteúdo para preencher o espaço */
 }
 
 .search-bar {
     display: flex;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto; /* Adiciona margem superior e inferior e centraliza horizontalmente */
+    max-width: 400px; /* Define uma largura máxima */
+    width: 100%; /* Ocupa todo o espaço até o limite de max-width */
 }
-
+ 
 .search-bar input {
     flex: 1;
     padding: 10px;
@@ -78,7 +102,7 @@ body, html {
 
 .search-bar button {
     padding: 10px;
-    background-color: #2E7D32;
+    background-color: #259055;
     color: white;
     border: none;
     border-radius: 0 5px 5px 0;
@@ -129,7 +153,7 @@ body, html {
 
 .confirm-button {
     padding: 10px 20px;
-    background-color: #2E7D32;
+    background-color: #259055;
     color: white;
     border: none;
     border-radius: 5px;
@@ -184,4 +208,20 @@ body, html {
         width: 100%;
         padding: 10px;
     }
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Margem inferior opcional para espaçamento */
+}
+
+.toggle-btn-container {
+    margin-top: auto; /* Empurra o botão para a parte inferior */
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
