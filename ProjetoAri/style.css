@@ -225,3 +225,144 @@ body, html {
     justify-content: center; /* Centraliza o botão horizontalmente */
     width: 100%; /* Ocupa toda a largura disponível */
 }
+
+/* botão de contraste */
+.search-bar button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #259055;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#toggle-contrast {
+    margin-left: 10px; /* Ajuste este valor conforme necessário para espaçar os botões */
+}
+body.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.inverted-contrast {
+    background-color: #ffffff;
+    color: #000000;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+/* PÁGINA DE CONTATO*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #2c6e49;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a.active, 
+.sidebar ul li a:hover {
+    background-color: #235e3b;
+    border-radius: 5px;
+}
+
+.main-content {
+    margin-left: 150px;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+.contact-section {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+.contact-box h2 {
+    margin-bottom: 10px;
+}
+
+.contact-box button {
+    background-color: #2c6e49;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-box button:hover {
+    background-color: #235e3b;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details h3 {
+    margin-top: 20px;
+}
+
+.contact-details ul {
+    list-style-type: none;
+}
+
+.contact-details ul li {
+    margin-bottom: 10px;
+}
