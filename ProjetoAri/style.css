@@ -2,29 +2,28 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: Arial, sans-serif;
-}
-
-body, html {
-    width: 100%;
-    height: 100%;
-}
-
-.container {
+    background-color: #f4f4f4; /* Fundo igual ao segundo estilo */
     display: flex;
     min-height: 100vh;
 }
 
+.container {
+    display: flex;
+    width: 100%;
+}
+
 .sidebar {
-    background-color: #259055;
+    background-color: #2c6e49; /* Cor de fundo da sidebar */
     color: white;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 250px;
-    transition: width 0.3s ease; /* Transição suave */
-    position: relative; /* Para o posicionamento correto do botão */
+    height: 100vh; /* Altura da sidebar ocupando a tela */
+    position: fixed; /* Para manter a sidebar fixa */
+    transition: width 0.3s ease; /* Transição suave para a largura */
 }
 
 .sidebar.retraida {
@@ -45,54 +44,57 @@ body, html {
     width: 40px; /* Imagem menor quando retraída */
 }
 
-.logo h2 {
-    margin: 10px 0;
-}
-
 .sidebar ul {
-    list-style: none;
+    list-style-type: none; /* Lista sem marcador */
     padding: 0;
-    width: 100%;
 }
 
 .sidebar ul li {
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s;
+    margin: 20px 0; /* Margem vertical entre os itens */
 }
 
-.sidebar ul li:hover {
-    background-color: #259055;
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Tamanho da fonte */
+    display: block; /* Faz o link ocupar toda a área do li */
+    padding: 10px; /* Espaçamento interno dos links */
+    transition: background-color 0.3s; /* Transição para o fundo ao passar o mouse */
 }
 
-/* Oculta o texto da logo e os itens da lista quando retraída */
-.sidebar.retraida .logo h4,
-.sidebar.retraida .logo h2,
-.sidebar.retraida ul li {
-    display: none;
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: #235e3b; /* Cor de fundo ao passar o mouse ou ativo */
+    border-radius: 5px; /* Bordas arredondadas */
 }
 
 .main-content {
-    flex: 1;
+    margin-left: 250px; /* Espaço para a sidebar */
     padding: 20px;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 100%;
     transition: margin-left 0.3s ease; /* Transição suave para o conteúdo */
 }
 
 .main-content.retraida {
-    margin-left: 0px; /* Move o conteúdo para preencher o espaço */
+    margin-left: 100px; /* Ajuste quando a sidebar estiver retraída */
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 30px;
 }
 
 .search-bar {
     display: flex;
-    margin: 0 auto 20px auto; /* Adiciona margem superior e inferior e centraliza horizontalmente */
-    max-width: 400px; /* Define uma largura máxima */
+    margin: 0 auto 20px auto; /* Centraliza horizontalmente */
+    max-width: 400px; /* Largura máxima */
     width: 100%; /* Ocupa todo o espaço até o limite de max-width */
 }
- 
+
 .search-bar input {
     flex: 1;
     padding: 10px;
@@ -102,20 +104,27 @@ body, html {
 
 .search-bar button {
     padding: 10px;
-    background-color: #259055;
+    background-color: #2c6e49; /* Cor do botão */
     color: white;
     border: none;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
 
-.form-section, .rating-section {
+.search-bar button:hover {
+    background-color: #235e3b; /* Cor do botão ao passar o mouse */
+}
+
+/* Seções de formulários e avaliações */
+.form-section,
+.rating-section {
     background: white;
     padding: 20px;
     border-radius: 5px;
 }
 
-.form-section h2, .rating-section h2 {
+.form-section h2,
+.rating-section h2 {
     margin-top: 0;
 }
 
@@ -148,12 +157,12 @@ body, html {
 
 .stars span:hover,
 .stars span:hover ~ span {
-    color: #FFCA28;
+    color: #FFCA28; /* Cor ao passar o mouse sobre as estrelas */
 }
 
 .confirm-button {
     padding: 10px 20px;
-    background-color: #259055;
+    background-color: #2c6e49; /* Cor do botão */
     color: white;
     border: none;
     border-radius: 5px;
@@ -162,7 +171,7 @@ body, html {
 }
 
 .confirm-button:hover {
-    background-color: #1B5E20;
+    background-color: #235e3b; /* Cor do botão ao passar o mouse */
 }
 
 @media (max-width: 768px) {
@@ -171,7 +180,7 @@ body, html {
     }
 
     .sidebar {
-        width: 100%;
+        width: 100%; /* Largura total para dispositivos menores */
         flex-direction: row;
         justify-content: space-around;
         padding: 10px 0;
@@ -179,33 +188,34 @@ body, html {
 
     .sidebar ul {
         display: flex;
-        gap: 10px;
+        gap: 10px; /* Espaçamento entre os itens */
     }
 
     .main-content {
         padding: 10px;
+        margin-left: 0; /* Remove a margem para dispositivos menores */
     }
 }
 
 @media (max-width: 480px) {
     .stars {
-        gap: 5px;
+        gap: 5px; /* Ajuste o espaçamento das estrelas */
     }
 
     .search-bar input {
-        font-size: 14px;
+        font-size: 14px; /* Tamanho da fonte menor */
     }
 
     .search-bar button {
-        font-size: 14px;
+        font-size: 14px; /* Tamanho da fonte menor */
     }
 
     .form-section textarea {
-        height: 80px;
+        height: 80px; /* Altura reduzida do textarea */
     }
 
     .confirm-button {
-        width: 100%;
+        width: 100%; /* Botão ocupa toda a largura */
         padding: 10px;
     }
 }
@@ -216,38 +226,37 @@ body, html {
     color: white;
     font-size: 24px;
     cursor: pointer;
-    margin-bottom: 20px; /* Margem inferior opcional para espaçamento */
+    margin-bottom: 20px; /* Margem inferior opcional */
 }
 
 .toggle-btn-container {
     margin-top: auto; /* Empurra o botão para a parte inferior */
     display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
+    justify-content: center; /* Centraliza o botão */
     width: 100%; /* Ocupa toda a largura disponível */
 }
 
-/* botão de contraste */
+/* Botão de contraste */
 .search-bar button {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #259055;
+    background-color: #2c6e49; /* Cor do botão */
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 #toggle-contrast {
-    margin-left: 10px; /* Ajuste este valor conforme necessário para espaçar os botões */
+    margin-left: 10px; /* Ajusta o espaçamento dos botões */
 }
+
 body.high-contrast {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000000; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
 }
 
 body.inverted-contrast {
-    background-color: #ffffff;
-    color: #000000;
-    filter: invert(1) hue-rotate(180deg);
+    background-color: #ffffff; /* Fundo claro */
+    color: #000000; /* Texto escuro */
+    filter: invert(1) hue-rotate(180deg); /* Inverte as cores */
 }
-
-
