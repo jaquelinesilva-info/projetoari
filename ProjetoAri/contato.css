@@ -228,12 +228,15 @@ form textarea {
     overflow: hidden; /* Esconder qualquer rolagem */
 }
 
+
+
 .carousel.delegacias-carousel-inner,
-.carousel.especializadas-carousel-inner {
+.carousel.especializadas-carousel-inner,.carousel.especializadas-carousel-inner-2 {
     display: flex;
     overflow: hidden; /* Esconde a barra de rolagem */
     width: 100%; /* Ajusta a largura do carrossel */
 }
+
 
 .card {
     background-color: #ecf0f1;
