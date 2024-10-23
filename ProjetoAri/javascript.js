@@ -19,28 +19,39 @@ contrastButton.addEventListener('click', () => {
     }
 });
 
-/*  formulario de contato*/
+/* Formulário de contato */
 function showTab(event, tabName) {
-    // Esconder todos os conteúdos das abas
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach((tab) => {
         tab.style.display = 'none';
     });
 
-    // Remover a classe "active" de todas as abas
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach((tab) => {
         tab.classList.remove('active');
     });
 
-    // Mostrar o conteúdo da aba clicada
     document.getElementById(tabName).style.display = 'block';
-    
-    // Adicionar a classe "active" na aba clicada
     event.currentTarget.classList.add('active');
 }
 
-// Mostrar a aba de "Canais de Atendimento" por padrão quando a página é carregada
+// Mostrar a aba de "Canais de Atendimento" por padrão
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('defaultTab').click();
+});
+
+/* Carrossel */
+const carousel = document.querySelector('.carousel');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const cardWidth = 300; // Largura do card
+const visibleCards = 3; // Número de cards visíveis
+
+nextBtn.addEventListener('click', () => {
+    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    carousel.scrollBy({ left: cardWidth * visibleCards, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -cardWidth * visibleCards, behavior: 'smooth' });
 });

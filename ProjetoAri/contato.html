@@ -36,7 +36,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16"> 
                             <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
                         </svg>
-                        Delegacia virtual
+                        Contatos
                     </a>
                 </li>
                 
@@ -104,7 +104,7 @@
                 
                 <div class="tabs">
                     <button class="tab" onclick="showTab(event, 'canaisAtendimento')" id="defaultTab">Canais de Atendimento</button>
-                    <button class="tab" onclick="showTab(event, 'canaisAtendimento')" id="defaultTab">Delegacias</button>
+                    <button class="tab" onclick="showTab(event, 'delegacias')">Delegacias</button>
                     <button class="tab" onclick="showTab(event, 'formularioContato')">Formulário de Contato</button>
                 </div>
                 
@@ -162,6 +162,168 @@
                         </div>
                     </div>
                 </div>
+                <div id="delegacias" class="tab-content" style="display:none;">
+                    <!-- Carrossel de delegacias -->
+                    <h2>Delegacias - Grande Natal</h2>
+                    <div class="carousel-container delegacias-carousel">
+                        <button class="carousel-btn prev-btn delegacias-prev-btn">◀</button>
+                        <div class="carousel delegacias-carousel-inner">
+                            <div class="card">
+                                <h3>1ª Delegacia de Plantão (Zona Sul) - Central de Flagrantes</h3>
+                                <p>Endereço: Av. Interventor Mário Câmara, 3532 - Cidade da Esperança, Natal - RN, 59060-400</p>
+                                <p>Telefones: (84) 9.8135-6432</p>
+                            </div>
+                            <div class="card">
+                                <h3>2ª Delegacia de Plantão (Zona Norte)</h3>
+                                <p>Endereço: Av. Dr. João Medeiros Filho, 2141, Conjunto Potengi, Natal/RN – Cep: 59.110-200</p>
+                                <p>Telefones: (84) 3232-1547 / (84) 3232-6291</p>
+                            </div>
+                            <div class="card">
+                                <h3>3ª Delegacia de Plantão (Parnamirim)</h3>
+                                <p>Endereço: Lot. Projetado, Parnamirim - RN, 59147-060</p>
+                                <p>Telefones: (84) 3232-6306 / (84) 3232-3605</p>
+                            </div>
+                            <div class="card">
+                                <h3>1ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Rio Branco, 728, Cidade Alta, Natal/RN</p>
+                                <p>Telefones: (84) 3232-2524 / (84) 3232-2528</p>
+                            </div>
+                            <div class="card">
+                                <h3>2ª Delegacia de Polícia</h3>
+                                <p>Endereço: Travessa Jordanês, s/nº, Brasília Teimosa, Natal/RN, Cep: 59010-470</p>
+                                <p>Telefones: (84) 3232-1555 / (84) 3232-6272</p>
+                            </div>
+                            <div class="card">
+                                <h3>3ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Cel. Estevam, 1413, Alecrim, Natal/RN, Cep: 59030-000</p>
+                                <p>Telefones: (84) 3232-1567 / (84) 3232-1563</p>
+                            </div>
+                            <div class="card">
+                                <h3>4ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua João XXIII, 1830, Mãe Luiza, Natal/RN, Cep: 59014-250</p>
+                                <p>Telefones: (84) 3232-1550 / (84) 3232-1558</p>
+                            </div>
+                            <div class="card">
+                                <h3>5ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua São José do Campestre, 2593, Lagoa Nova, Natal/RN, Cep: 59063-090</p>
+                                <p>Telefones: (84) 3232-8359 / (84) 3232-4517</p>
+                            </div>
+                            <div class="card">
+                                <h3>6ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua Campo Maior, 21-B, Conjunto Panatis II, Natal/RN, Cep: 59108-210</p>
+                                <p>Telefones: (84) 3232-7836 / (84) 3232-6295</p>
+                            </div>
+                            <div class="card">
+                                <h3>7ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua dos Paiatis, 1844 - Quintas, Natal/RN, Cep: 59035-150</p>
+                                <p>Telefones: (84) 3232-1561 / (84) 3232-6263</p>
+                            </div>
+                            <div class="card">
+                                <h3>8ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Paraíba, 385, Cidade da Esperança, Natal/RN, Cep: 59072-200</p>
+                                <p>Telefones: (84) 3232-1677 / (84) 3232-6281</p>
+                            </div>
+                            <div class="card">
+                                <h3>9ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua Campo Maior, 21-B, Conjunto Panatis, Natal/RN, Cep: 59108-100</p>
+                                <p>Telefones: (84) 3232-1546 / (84) 3232-6290</p>
+                            </div>
+                            <div class="card">
+                                <h3>10ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Engenheiro Roberto Freire, 1962, Shopping Seaway, Loja 25, Capim Macio, Natal/RN, Cep: 59082-095</p>
+                                <p>Telefones: (84) 3232-6300 / (84) 3232-2280</p>
+                            </div>
+                            <div class="card">
+                                <h3>11ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Monte Rei, shopping Mar Del Plata, Planalto, Natal/RN, Cep: 59073-150</p>
+                                <p>Telefones: (84) 3232-2283 / (84) 3232-6303</p>
+                            </div>
+                            <div class="card">
+                                <h3>12ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Itapetinga, 01, Conjunto Santarém, Natal/RN, Cep: 59124-400</p>
+                                <p>Telefones: (84) 3232-1544 / (84) 3232-6293</p>
+                            </div>
+                            <div class="card">
+                                <h3>13ª Delegacia de Polícia</h3>
+                                <p>Endereço: Av. Dr. Juliano Moreira, s/nº, Conjunto Pajuçara II, Natal/RN, Cep: 59131-430</p>
+                                <p>Telefones: (84) 3232-1545 / (84) 3232-6294</p>
+                            </div>
+                            <div class="card">
+                                <h3>14ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua Tamarineira, 8500, Felipe Camarão, Natal/RN, Cep: 59072-200</p>
+                                <p>Telefones: (84) 3232-7210 / (84) 3232-6287</p>
+                            </div>
+                            <div class="card">
+                                <h3>15ª Delegacia de Polícia</h3>
+                                <p>Endereço: Rua Palestina, 99, Andar Térreo (Ponta Negra Center), Ponta Negra, Natal/RN, Cep: 59092-460</p>
+                                <p>Telefones: (84) 3232-7249 / (84) 3232-7403</p>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next-btn delegacias-next-btn">▶</button>
+                    </div>
+                
+                    <!-- Carrossel de delegacias especializadas -->
+                    <h2>Delegacias Especializadas</h2>
+                    <div class="carousel-container especializadas-carousel">
+                        <button class="carousel-btn prev-btn especializadas-prev-btn">◀</button>
+                        <div class="carousel especializadas-carousel-inner">
+                            <div class="card">
+                                <h3>Departamento de Proteção a Grupos em Situação de Vulnerabilidade (DPGV)</h3>
+                                <p>Endereço: Rua Demócrito de Souza Paiva, 1580, Lagoa Nova, Natal, CEP 59062-440</p>
+                            </div>
+                            <div class="card">
+                                <h3>Delegacia Especializada de Combate a Crimes de Racismo, Intolerância e Discriminação (DECRID - NATAL)</h3>
+                                <p>Endereço: Rua Demócrito de Souza Paiva, 1580, Lagoa Nova, Natal, CEP 59062-440</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (Zonas Leste, Oeste e Sul) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Av. Capitão-Mor Gouveia, 1339; 59060-400 - Nossa Sra. de Nazaré, Natal - RN</p>
+                                <p>Telefone: (84) 98135-5218</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (Zona Norte) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Av. Guadalupe (Fórum Varella Barca), 2145 - Potengi, Natal/RN</p>
+                                <p>Telefone: 98135-6792</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEPID (Natal) - Delegacia Especializada de Proteção ao Idoso e à Pessoa com Deficiência de Natal</h3>
+                                <p>Endereço: Rua Demócrito de Souza Paiva, 1580, Lagoa Nova, Natal, CEP 59062-440</p>
+                            </div>
+                            <div class="card">
+                                <h3>DPCA (Natal) - Delegacia Especializada na Proteção da Criança e do Adolescente</h3>
+                                <p>Endereço: Rua Demócrito de Souza Paiva, 1580, Lagoa Nova, Natal, CEP 59062-440</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (Parnamirim) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Avenida Dr. Atila Paiva, n. 69, Cohabinal, Parnamirim, CEP 59140-700</p>
+                                <p>Telefones: (84) 3644-6407 / WhatsApp (84) 98123-4114</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (Macaíba) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Rua Pau Brasil, 33. Instalada na Central do Cidadão.</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (São Gonçalo do Amarante) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Rua Francisco Duarte de Carvalho, Jardins, no Natal Moda Shopping.</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEAM (Ceará-Mirim) - Delegacia Especializada em Atendimento à Mulher</h3>
+                                <p>Endereço: Rua Itajagre, 82. Instalada na Central de Cidadão de Ceará-Mirim.</p>
+                            </div>
+                            <div class="card">
+                                <h3>DEPID (Parnamirim) - Delegacia Especializada de Proteção ao Idoso e à Pessoa com Deficiência de Natal</h3>
+                                <p>Endereço: Avenida Edgar Dantas, n. 710, Santos Reis, Parnamirim, CEP 59141-150</p>
+                            </div>
+                            <div class="card">
+                                <h3>DPCA (Parnamirim) - Delegacia Especializada na Proteção da Criança e do Adolescente</h3>
+                                <p>Endereço: Avenida Edgar Dantas, n. 710, Santos Reis, Parnamirim, CEP: 59141-150</p>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next-btn delegacias-next-btn">▶</button>
+                    </div>
+                
+                
+                
         
                 <!-- Conteúdo do Formulário de Contato -->
                 <div id="formularioContato" class="tab-content" style="display: none;">
