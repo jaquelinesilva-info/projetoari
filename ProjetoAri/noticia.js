@@ -1,12 +1,4 @@
-// Seleciona o botão de fechar e a barra de notificação
-const closeBtn = document.getElementById('closeNotificationBar');
-const notificationBar = document.getElementById('notificationBar');
-closeBtn.addEventListener('click', function() {
-    notificationBar.style.display = 'none'; // Esconde a barra de notificação
-});
-
-
-// Dados simulados de notícias
+// Simulando dados de notícias
 const noticias = [
     {
         titulo: "Roubo a banco frustrado pela Polícia Civil em Parnamirim",
@@ -191,73 +183,87 @@ const noticias = [
     {
         titulo: "Meteorologistas preveem chuvas intensas para os próximos dias no litoral nordestino",
         descricao: "População deve se preparar para possíveis enchentes e ventos fortes na região.",
-    },
-    {
-        titulo: "Projeto de lei incentiva a reciclagem",
-        descricao: "blablabla eu desistoooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-    },
-    {
-        titulo: "Projeto de lei incentiva a reciclagem",
-        descricao: "blablabla eu desistoooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
-    },
-    {
-        titulo: "Projeto de lei incentiva a reciclagem",
-        descricao: "blablabla eu desistoooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
     }
 ];
 
+const itemsPerPage = 6;
+let currentPage = 1;
 
-// Função para renderizar notícias com ênfase na manchete principal
-function renderNews() {
+// Função para renderizar as notícias
+function renderNoticias(page) {
     const newsList = document.getElementById('news-list');
-    
-    // Seleciona a primeira notícia como manchete principal
-    const mainHeadline = noticias[0];
-    const mainHeadlineElement = document.getElementById('main-headline');
+    newsList.innerHTML = '';
 
-    // Exibe a manchete principal
-    mainHeadlineElement.innerHTML = `
-        <h2>Manchete do Dia: ${mainHeadline.titulo}</h2>
-        <p id="headline-description">${mainHeadline.descricao}</p>
-    `;
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const currentNews = noticias.slice(startIndex, endIndex);
 
-    // Renderizar as demais notícias
-    noticias.slice(1).forEach(noticia => {
-        // Criar elemento de notícia
+    currentNews.forEach(noticia => {
         const newsItem = document.createElement('div');
         newsItem.classList.add('news-item');
-
-        // Preencher conteúdo da notícia
-        newsItem.innerHTML = `
-            <h3>${noticia.titulo}</h3>
-            <p>${noticia.descricao}</p>
-        `;
-
-        // Adicionar ao container de notícias
+        newsItem.innerHTML = `<h2>${noticia.titulo}</h2><p>${noticia.descricao}</p>`;
         newsList.appendChild(newsItem);
     });
+
+    document.querySelector('.page-indicator').textContent = page;
 }
 
-// Chama a função para renderizar as notícias ao carregar a página
-renderNews();
+// Evento de navegação entre páginas
+document.querySelector('.prev').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (currentPage > 1) {
+        currentPage--;
+        renderNoticias(currentPage);
+    }
+});
 
-// Função para alternar entre as seções do menu de feedback
-function showSection(sectionId) {
-    // Remover a classe 'active' de todas as seções
-    document.querySelectorAll('.feedback-content').forEach(function(section) {
-        section.classList.remove('active');
-    });
+document.querySelector('.next').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (currentPage < Math.ceil(noticias.length / itemsPerPage)) {
+        currentPage++;
+        renderNoticias(currentPage);
+    }
+});
 
-    // Adicionar a classe 'active' à seção clicada
-    document.getElementById(sectionId).classList.add('active');
+// Inicializar com a primeira página
+renderNoticias(currentPage);
 
-    // Atualizar o menu para refletir a seção ativa
-    document.querySelectorAll('.menu-item').forEach(function(item) {
-        item.classList.remove('active');
-    });
-    document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+// Seleciona o elemento da manchete principal
+const mainHeadlineElement = document.getElementById('main-headline');
+
+// Dados simulados de manchete principal (você pode substituir por dados dinâmicos)
+const manchetePrincipal = {
+    titulo: "Polícia Civil realiza grande operação contra o tráfico de drogas",
+    descricao: "A operação, que contou com mais de 100 policiais, resultou em várias prisões e apreensões.",
+    link: "#"
+};
+
+// Função para exibir a manchete do dia
+function exibirManchete() {
+    // Verifica se o elemento da manchete existe
+    if (mainHeadlineElement) {
+        // Insere o conteúdo da manchete dentro do elemento
+        mainHeadlineElement.innerHTML = `
+            <h2>${manchetePrincipal.titulo}</h2>
+            <p>${manchetePrincipal.descricao} <a href="${manchetePrincipal.link}">Leia mais</a></p>
+        `;
+    } else {
+        console.error("Elemento da manchete não encontrado.");
+    }
 }
 
-// Definir a seção inicial como "Canais de Atendimento"
-showSection('canais');
+// Chama a função para exibir a manchete ao carregar a página
+document.addEventListener('DOMContentLoaded', exibirManchete);
 
+/* notificação*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const closeBtn = document.getElementById('closeNotificationBar');
+    const notificationBar = document.getElementById('notificationBar');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+            notificationBar.style.display = 'none';
+        });
+    }
+});

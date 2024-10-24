@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços PCRN</title>
-    <link rel="stylesheet" href="servico.css">
-    <link rel="stylesheet" href="sidebar.css">
+    <title>Polícia Cívil do Rio Grande do Norte</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="feadback.css">
+    <link rel="stylesheet" href="servico.css">
+    <link rel="stylesheet" href="noticias.css">
+    <link rel="stylesheet" href="contato.css">
 
 </head>
 
@@ -82,13 +84,13 @@
                         </svg>Notícias
                 </li>
                 </a>
-                <li> 
+                <li>
                     <a href="missao.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="currentColor"
-                        class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
-                    </svg>Missões
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="currentColor"
+                            class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2" />
+                        </svg>Missões
                 </li>
                 </a>
                 <li>
@@ -101,7 +103,7 @@
                         Feadback
                     </a>
                 </li>
-                
+
             </ul>
             <div class="toggle-btn-container">
                 <button class="toggle-btn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height=16"
@@ -113,42 +115,60 @@
         </div>
 
         <div class="main-content">
-            <h1>Serviços</h1>
-            <div class="tabs">
-                <a href="servico.html" style="text-decoration: none; color: inherit;">
-                    <span>Serviços Oferecidos</span>
-                </a>
-                <span class="active">Solicitar Serviços</span>
+            <div class="search-bar">
+                <input type="text" placeholder="O que você procura">
+                <button>🔍</button>
+                <button id="toggle-contrast" aria-label="Alternar contraste para acessibilidade">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-circle-half" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 0 8 1zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16" />
+                    </svg>
+                </button>
+
+            </div>
+            <div id="feedback">
+                <h1>Feadback</h1>
+                <p class="feedback-subtitle">Fale Conosco para Apoio, Denúncias e Serviços da Polícia Civil. <a
+                        href="#">SAIBA MAIS</a></p>
+
+                <h2>Feedback para melhorar o nosso sistema</h2>
+                <div id="feedback-progress-bar">
+                    <span class="feedback-progress"></span>
+                </div>
+
+                <form>
+                    <div class="feedback-section">
+                        <label for="feedback-experience">Descrição da sua experiência</label>
+                        <textarea id="feedback-experience"
+                            placeholder="Descreva brevemente o motivo pelo qual você entrou em contato com a Polícia Civil e como foi o atendimento…"></textarea>
+                    </div>
+
+                    <div class="feedback-rating-section">
+                        <p>Avalie:</p>
+                        <div id="feedback-stars">
+                            <span>&#9734;</span>
+                            <span>&#9734;</span>
+                            <span>&#9734;</span>
+                            <span>&#9734;</span>
+                            <span>&#9734;</span>
+                        </div>
+                    </div>
+
+                    <div class="feedback-section">
+                        <label for="feedback-suggestions">Sugestões de melhorias (se houver)</label>
+                        <textarea id="feedback-suggestions"
+                            placeholder="Se você sentiu que algo poderia ser melhorado, essa é a oportunidade de expressar suas sugestões de forma construtiva…"></textarea>
+                    </div>
+
+                    <button type="submit" id="feedback-submit-button">CONFIRMAR</button>
+                </form>
             </div>
 
-            <div class="services"></div>
-            <h1>Solicitar Serviço</h1>
-            <form id="myForm">
-                <div>
-                    <label for="editor">Conteúdo:</label>
-                    <div id="editor"></div>
-                    <input type="hidden" name="content" id="content">
-                </div>
-                <div>
-                    <button id='butao' type="submit">Enviar</button>
-                </div>
-            </form>
 
         </div>
+
+    </div>
 </body>
 <script src="javascript.js"></script>
-<script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-<script>
-    // Inicializa o editor Quill
-    var quill = new Quill('#editor', {
-        theme: 'snow'
-    });
-
-    // Quando o formulário é enviado, pega o conteúdo do editor
-    document.getElementById('myForm').onsubmit = function () {
-        var content = quill.root.innerHTML; // Obtem o HTML do editor
-        document.getElementById('content').value = content; // Armazena no campo oculto
-    };
-</script>
 
 </html>
