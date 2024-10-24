@@ -191,3 +191,72 @@ body.inverted-contrast {
     color: #000000; /* Texto escuro */
     filter: invert(1) hue-rotate(180deg); /* Inverte as cores */
 }
+
+
+/*missões:*/
+/*cards:*/
+
+.tab-content{
+    margin-top: 50px;
+}
+
+h2{
+    margin-top: 50px;
+}
+.cards-container {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #f4f4f9;
+    border: 2px solid #1f3a93;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-content h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #1f3a93;
+}
+
+.card-content p {
+    color: #333;
+}
+
+/* Estilo para os Principais Marcos Históricos */
+.historical-milestones {
+    margin: 20px 0;
+}
+
+.historical-milestones ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.historical-milestones li {
+    background-color: #f4f4f9;
+    border-left: 5px solid #1f3a93;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.historical-milestones li:hover {
+    background-color: #e2e6ef;
+}
+
+.historical-milestones strong {
+    color: #1f3a93;
+}
+

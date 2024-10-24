@@ -129,3 +129,51 @@ if (nextBtnEspecializadas2 && prevBtnEspecializadas2 && carouselEspecializadas2)
     });
 }
 
+
+//cards:
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalText = document.getElementById('modal-text');
+    const closeModal = document.getElementById('close-modal');
+
+    // Dados adicionais para os cards
+    const cardDetails = {
+        0: {
+            title: 'A Fundação da Polícia Civil',
+            text: 'A Polícia Civil do RN foi fundada em 1836 para manter a ordem e proteger os cidadãos. Desde então, tem desempenhado um papel crucial na manutenção da segurança pública e da justiça no estado.'
+        },
+        1: {
+            title: 'Primeiras Grandes Operações',
+            text: 'Nas décadas de 1920 e 1930, a Polícia Civil realizou grandes operações para combater o crime organizado. Essas ações marcaram o início de sua reputação como uma força essencial para a justiça no estado.'
+        },
+        2: {
+            title: 'Modernização da Polícia Civil',
+            text: 'Nos anos 2000, a instituição passou por grandes avanços tecnológicos. Delegacias especializadas e sistemas digitais de monitoramento ajudaram a transformar a Polícia Civil em uma força moderna e eficiente.'
+        }
+    };
+
+    // Adiciona eventos de clique nos cards
+    cards.forEach((card, index) => {
+        card.addEventListener('click', () => {
+            const { title, text } = cardDetails[index];
+            modalTitle.innerText = title;
+            modalText.innerText = text;
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Fecha o modal ao clicar no "X"
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Fecha o modal ao clicar fora do conteúdo
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+

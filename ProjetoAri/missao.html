@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticias PCRN</title>
-    <link rel="stylesheet" href="noticias.css">
+    <title>Missões PCRN</title>
+    <link rel="stylesheet" href="servico.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -107,32 +107,56 @@
             </div>
         </div>
 
-        <!-- Barra de Notificação -->
-        <div class="notification-bar" id="notificationBar">
-            <div class="notification-content">
-                <p>Banco de Alimentos: Combatendo o Desperdício e Promovendo a Segurança Alimentar!</p>
-                <a href="https://www.natal.rn.gov.br/news/post2/41204" class="btn-acao">Saiba Mais</a>
-            </div>
-            <button class="close-btn" id="closeNotificationBar">X</button>
-        </div>
-        <!-- Conteudo Principal (noticias): -->
         <div class="main-content">
-            <h1>Noticias</h1>
+            <h1>Missões</h1>
             <p>Fale Conosco para Apoio, Denúncias e Serviços da Polícia Civil. <a href="#">SAIBA MAIS</a></p>
-        <!-- Manchete Principal -->
-        <div class="main-headline" id="main-headline">
-            <!-- O conteúdo da manchete será inserido aqui dinamicamente -->
-        </div>
 
-        <!-- Lista de Notícias -->
-        <div class="news-list" id="news-list">
-            <!-- As outras notícias serão inseridas dinamicamente aqui -->
+            <div class="tabs">
+                <span class="active">Historias da Instituição</span>
+                </a>
+
+            </div>
+            <h2>Histórias da Instituição</h2>
+            <div id="historias" class="tab-content active">  
+                <!-- Seção de Cards Interativos -->
+                <section class="cards-container">
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>A Fundação da Polícia Civil</h4>
+                            <p>Em 1836, a Polícia Civil do Rio Grande do Norte foi criada com o objetivo de manter a ordem e proteger os cidadãos do estado. A sua fundação marcou o início de uma longa trajetória de compromisso com a segurança pública.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>Primeiras Grandes Operações</h4>
+                            <p>Nas décadas de 1920 e 1930, a instituição começou a realizar suas primeiras grandes operações de combate ao crime organizado e ao tráfico de influências, consolidando sua atuação no cenário estadual.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h4>Modernização da Polícia Civil</h4>
+                            <p>A partir dos anos 2000, a Polícia Civil passou por uma série de modernizações tecnológicas e estruturais, como a implementação de sistemas de monitoramento digital e a criação de delegacias especializadas.</p>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Seção de Principais Marcos Históricos -->
+                <section class="historical-milestones">
+                    <h3>Principais Marcos Históricos</h3>
+                    <ul>
+                        <li><strong>1836:</strong> Fundação da Polícia Civil do Rio Grande do Norte.</li>
+                        <li><strong>1904:</strong> Criação da primeira delegacia especializada no estado.</li>
+                        <li><strong>1927:</strong> Primeira grande operação de combate ao crime organizado no interior do estado.</li>
+                        <li><strong>1975:</strong> Inclusão de mulheres no corpo policial da instituição.</li>
+                        <li><strong>2003:</strong> Implementação de sistemas digitais de monitoramento e perícia.</li>
+                        <li><strong>2015:</strong> Abertura da delegacia de combate aos crimes cibernéticos.</li>
+                        <li><strong>2020:</strong> Ampliação das operações integradas com outras forças de segurança estaduais e federais.</li>
+                    </ul>
+                </section>
+            </div>
+            
         </div>
-    </main>
-</div>
-</div>
 </body>
-    <script src="javascript.js"></script>
-    <script src="noticia.js"></script>
-</html>
+<script src="javascript.js"></script>
 
+</html>
