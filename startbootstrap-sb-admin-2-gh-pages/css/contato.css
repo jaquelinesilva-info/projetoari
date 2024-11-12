@@ -1,0 +1,63 @@
+
+/* Estilo para os cards e o carrossel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0; /* Ajuste o espaço conforme necessário */
+    overflow: hidden; /* Esconder qualquer rolagem */
+}
+
+
+
+.carousel.delegacias-carousel-inner,
+.carousel.especializadas-carousel-inner,.carousel.especializadas-carousel-inner-2 {
+    display: flex;
+    overflow: hidden; /* Esconde a barra de rolagem */
+    width: 100%; /* Ajusta a largura do carrossel */
+}
+
+
+.card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 5px; /* Ajustando margens para evitar excesso */
+    flex: 0 0 calc(33.33% - 10px); /* Ajuste para exibir 3 cards por vez */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    text-align: center;
+}
+
+.carousel-btn {
+    background-color: #00A859;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.carousel-btn:hover {
+    background-color: #00A859;
+}
+
+.delegacias-prev-btn {
+    margin-right: 20px;
+}
+
+.delegacias-next-btn {
+    margin-left: 20px;
+}
+
+.especializadas-prev-btn {
+    margin-right: 20px;
+}
+
+.especializadas-next-btn {
+    margin-left: 20px;
+}
+
+
+

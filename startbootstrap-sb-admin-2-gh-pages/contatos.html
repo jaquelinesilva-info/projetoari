@@ -9,20 +9,24 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Polícia Cívil do RN</title>
+    <title>Polícia Cívil do RN 2</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
+
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -42,12 +46,12 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="contatos.html">
                     <i class="fas fa-fw fa-phone"></i>
                     <span>Contatos</span></a>
@@ -150,6 +154,8 @@
         </ul>
         <!-- End of Sidebar -->
 
+
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -160,9 +166,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
                     <form
@@ -178,8 +186,6 @@
                         </div>
                     </form>
 
-
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -187,130 +193,152 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Home</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Contatos</h1>
+                    <p class="mb-4">
+                    <div class="tabs">
+                        <span class="active">Canais de Atendimento</span>
+                        <a href="contatosDelegacias.html" style="text-decoration: none; color: inherit;">
+                            <span>Delegacias</span>
+                        </a>
+
                     </div>
+                    </p>
 
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Contatos</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div class="row">
 
-                    <!-- Content Row -->
-                    <div class="row">
+                                    <div class="col-lg-6">
 
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
+                                        <!-- Default Card Example -->
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                Sugestão </div>
+                                            <div class="card-body">
+                                                <h2>O Contato Mais Apropriado para Todo o Momento!</h2>
+                                                <p>Converse em Tempo Real com os Nossos Atendentes</p>
+                                                <button class="confirm-button">IR para WhatsApp</button>
 
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Registro o nível de atendimento da
-                                        ocorrência
-                                    </h6>
-                                </div>
-                                <!-- Inclua o TinyMCE -->
-                                <!-- Place the first <script> tag in your HTML's <head> -->
-                                <!-- Adicione o script com a sua chave de API na seção <head> do HTML -->
-                                <!-- No <body>, insira o script de configuração e o textarea onde o editor será exibido -->
-                                <script src="js/tinymce/tinymce.min.js"></script>
-                                <script>
-                                    tinymce.init({
-                                        selector: 'textarea',
-                                        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-                                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-                                    });
-                                </script>
+                                            </div>
+                                        </div>
+                                        <!-- Default Card Example -->
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                Saiba Mais </div>
+                                            <div class="card-body">
+                                                Telefone: <br>
+                                                DELEGACIA GERAL: (XX) XXXX-XXXX <br>
+                                                CENTRAL DE DENÚNCIAS: 181 <br>
+                                                EMERGÊNCIA: 190 <br>
+                                                Email: <br>
+                                                ATENDIMENTO GERAL: SEILAGMAIL.COM <br>
+                                                DENÚNCIAS: DENUNCIAS@GMAIL.COM <br>
+                                            </div>
+                                        </div>
 
-                                <div class="card-body">
-                                    <textarea id="editor"
-                                        placeholder="Registre de forma rápida e eficiente sua ocorrência..."></textarea>
-                                </div>
-                                <div class="rating-section">
-                                    <h2>Avalie</h2>
-                                    <p>Avalie o Nível da sua Ocorrência:</p>
-                                    <link rel="stylesheet"
-                                        href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-                                    <div class="estrelas">
-                                        <input type="radio" id="cm_star-empty" name="fb" value="" checked />
-                                        <label for="cm_star-1"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-1" name="fb" value="1" />
-                                        <label for="cm_star-2"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-2" name="fb" value="2" />
-                                        <label for="cm_star-3"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-3" name="fb" value="3" />
-                                        <label for="cm_star-4"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-4" name="fb" value="4" />
-                                        <label for="cm_star-5"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-5" name="fb" value="5" />
                                     </div>
-                                    <button class="confirm-button">CONFIRMAR</button>
+
+                                    <div class="col-lg-6">
+
+                                        <!-- Dropdown Card Example -->
+
+                                        <!-- Default Card Example -->
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                OBTENHA MAIS CONTATOS </div>
+                                            <div class="card-body">
+                                                <h2>Venha para o Nosso Email mais Forte!</h2>
+                                                <p>Converse em Tempo Real com os Nossos Atendentes via Email</p>
+                                                <button class="confirm-button">IR para Email</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Default Card Example -->
+                                        <div class="card mb-4">
+                                            <div class="card-header">
+                                                Atendimentos Presenciais</div>
+                                            <div class="card-body">
+                                                <p>Endereço: Rua Exemplo 123, Bairro Central, Natal, RN</p>
+                                                <p>Horários de funcionamento: Segundas a sextas, das 7h às 18h</p>
+                                            </div>
+                                            <div class="card-header">
+                                                Redes Sociais
+                                            </div>
+                                            <div class="card-body">
+                                                <p>Facebook: facebook.com/pcce</p>
+                                                <p>Instagram: instagram.com/pcce</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
 
-
                             </div>
 
                         </div>
-                        <!-- /.container-fluid -->
-
-                    </div>
-                    <!-- End of Main Content -->
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; PCRN 2024</span>
-                            </div>
-                        </div>
-                    </footer>
-
-                    <!-- End of Footer -->
-
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
-                        </div>
                     </div>
                 </div>
+
             </div>
+            <!-- /.container-fluid -->
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        </div>
+        <!-- End of Main Content -->
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+    </div>
+    <!-- End of Content Wrapper -->
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
+    </div>
+    <!-- End of Page Wrapper -->
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
