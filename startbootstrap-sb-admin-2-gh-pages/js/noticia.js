@@ -187,7 +187,7 @@ const noticias = [
 ];
 
 // Configuração de página
-const itemsPerPage = 7;
+const itemsPerPage = 6;
 let currentPage = 1;
 
 // Função para renderizar as notícias em duas colunas
