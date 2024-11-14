@@ -186,30 +186,47 @@ const noticias = [
     }
 ];
 
-const itemsPerPage = 6;
+// Configuração de página
+const itemsPerPage = 7;
 let currentPage = 1;
 
-// Função para renderizar as notícias
+// Função para renderizar as notícias em duas colunas
 function renderNoticias(page) {
-    const newsList = document.getElementById('news-list');
-    newsList.innerHTML = '';
+    const newsListLeft = document.getElementById('news-list-left');
+    const newsListRight = document.getElementById('news-list-right');
+
+    // Limpar o conteúdo das listas
+    newsListLeft.innerHTML = '';
+    newsListRight.innerHTML = '';
 
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentNews = noticias.slice(startIndex, endIndex);
 
-    currentNews.forEach(noticia => {
+    currentNews.forEach((noticia, index) => {
         const newsItem = document.createElement('div');
-        newsItem.classList.add('news-item');
-        newsItem.innerHTML = `<h2>${noticia.titulo}</h2><p>${noticia.descricao}</p>`;
-        newsList.appendChild(newsItem);
+        newsItem.classList.add('card', 'mb-4');
+        newsItem.innerHTML = `
+            <div class="card-body">
+                <h2 class="card-title">${noticia.titulo}</h2>
+                <p class="card-text">${noticia.descricao}</p>
+            </div>
+        `;
+
+        // Distribuir em colunas diferentes
+        if (index < 3) {
+            newsListLeft.appendChild(newsItem);
+        } else {
+            newsListRight.appendChild(newsItem);
+        }
     });
 
+    // Atualizar indicador de página
     document.querySelector('.page-indicator').textContent = page;
 }
 
 // Evento de navegação entre páginas
-document.querySelector('.prev').addEventListener('click', function(e) {
+document.querySelector('.prev').addEventListener('click', function (e) {
     e.preventDefault();
     if (currentPage > 1) {
         currentPage--;
@@ -217,7 +234,7 @@ document.querySelector('.prev').addEventListener('click', function(e) {
     }
 });
 
-document.querySelector('.next').addEventListener('click', function(e) {
+document.querySelector('.next').addEventListener('click', function (e) {
     e.preventDefault();
     if (currentPage < Math.ceil(noticias.length / itemsPerPage)) {
         currentPage++;
@@ -231,7 +248,7 @@ renderNoticias(currentPage);
 // Seleciona o elemento da manchete principal
 const mainHeadlineElement = document.getElementById('main-headline');
 
-// Dados simulados de manchete principal (você pode substituir por dados dinâmicos)
+// Dados simulados de manchete principal
 const manchetePrincipal = {
     titulo: "Polícia Civil realiza grande operação contra o tráfico de drogas",
     descricao: "A operação, que contou com mais de 100 policiais, resultou em várias prisões e apreensões.",
@@ -240,20 +257,16 @@ const manchetePrincipal = {
 
 // Função para exibir a manchete do dia
 function exibirManchete() {
-    // Verifica se o elemento da manchete existe
     if (mainHeadlineElement) {
-        // Insere o conteúdo da manchete dentro do elemento
         mainHeadlineElement.innerHTML = `
             <h2>${manchetePrincipal.titulo}</h2>
             <p>${manchetePrincipal.descricao} <a href="${manchetePrincipal.link}">Leia mais</a></p>
         `;
-    } else {
-        console.error("Elemento da manchete não encontrado.");
     }
 }
 
-// Chama a função para exibir a manchete ao carregar a página
 document.addEventListener('DOMContentLoaded', exibirManchete);
+
 
 /* notificação*/
 
