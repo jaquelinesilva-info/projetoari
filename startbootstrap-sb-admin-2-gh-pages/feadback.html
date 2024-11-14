@@ -43,7 +43,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
@@ -68,7 +68,7 @@
                     <i class="fas fa-fw fa-bookmark"></i>
                     <span>Missões</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="feadback.html">
                     <i class="fas fa-fw fa-heart"></i>
                     <span>Feadback</span></a>
@@ -123,7 +123,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Home</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Feadback</h1>
                     </div>
 
 
@@ -136,14 +136,9 @@
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Registro o nível de atendimento da
-                                        ocorrência
+                                    <h6 class="m-0 font-weight-bold text-primary">Feedback para melhorar o nosso sistema
                                     </h6>
                                 </div>
-                                <!-- Inclua o TinyMCE -->
-                                <!-- Place the first <script> tag in your HTML's <head> -->
-                                <!-- Adicione o script com a sua chave de API na seção <head> do HTML -->
-                                <!-- No <body>, insira o script de configuração e o textarea onde o editor será exibido -->
                                 <script src="js/tinymce/tinymce.min.js"></script>
                                 <script>
                                     tinymce.init({
@@ -154,12 +149,12 @@
                                 </script>
 
                                 <div class="card-body">
+                                    <p><h5 style="text-align: center;">Descrição da sua experiência</h5></p>
                                     <textarea id="editor"
-                                        placeholder="Registre de forma rápida e eficiente sua ocorrência..."></textarea>
+                                        placeholder="Descreva brevemente o motivo pelo qual você entrou em contato com a Polícia Civil e como foi o atendimento…"></textarea>
                                 </div>
                                 <div class="rating-section">
                                     <h2>Avalie</h2>
-                                    <p>Avalie o Nível da sua Ocorrência:</p>
                                     <link rel="stylesheet"
                                         href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
                                     <div class="estrelas">
@@ -175,6 +170,12 @@
                                         <label for="cm_star-5"><i class="fa"></i></label>
                                         <input type="radio" id="cm_star-5" name="fb" value="5" />
                                     </div>
+                                    
+                                <div class="card-body">
+                                    <p><h5>Sugestões de melhorias (se houver)</h5></p>
+                                    <textarea id="editor"
+                                        placeholder="Se você sentiu que algo poderia ser melhorado, essa é a oportunidade de expressar suas sugestões de forma construtiva…"></textarea>
+                                </div>
                                     <button class="confirm-button">CONFIRMAR</button>
                                 </div>
 
