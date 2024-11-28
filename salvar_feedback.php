@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Executa e redireciona
     if ($stmt->execute()) {
-        header("Location: feedback.html?success=1");
+        header("Location: feedback.php?success=1");
     } else {
-        header("Location: feedback.html?error=1");
+        header("Location: feedback.php?error=1");
     }
 
     // Fecha a conexão

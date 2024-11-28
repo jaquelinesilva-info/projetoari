@@ -70,7 +70,7 @@
                     <span>Missões</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="feedback.html">
+                <a class="nav-link" href="feedback.php">
                     <i class="fas fa-fw fa-heart"></i>
                     <span>feedback</span></a>
             </li>
