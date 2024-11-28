@@ -21,6 +21,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+
 </head>
 
 <body id="page-top">
@@ -69,9 +70,9 @@
                     <span>Missões</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="feadback.html">
+                <a class="nav-link" href="feedback.html">
                     <i class="fas fa-fw fa-heart"></i>
-                    <span>Feadback</span></a>
+                    <span>feedback</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -123,7 +124,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Feadback</h1>
+                        <h1 class="h3 mb-0 text-gray-800">feedback</h1>
                     </div>
 
 
@@ -132,56 +133,58 @@
 
                         <!-- Content Column -->
                         <div class="col-lg-12 mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Feedback para melhorar o nosso sistema
-                                    </h6>
-                                </div>
-                                <script src="js/tinymce/tinymce.min.js"></script>
-                                <script>
-                                    tinymce.init({
-                                        selector: 'textarea',
-                                        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-                                        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-                                    });
-                                </script>
-
-                                <div class="card-body">
-                                    <p><h5 style="text-align: center;">Descrição da sua experiência</h5></p>
-                                    <textarea id="editor"
-                                        placeholder="Descreva brevemente o motivo pelo qual você entrou em contato com a Polícia Civil e como foi o atendimento…"></textarea>
-                                </div>
-                                <div class="rating-section">
-                                    <h2>Avalie</h2>
-                                    <link rel="stylesheet"
-                                        href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-                                    <div class="estrelas">
-                                        <input type="radio" id="cm_star-empty" name="fb" value="" checked />
-                                        <label for="cm_star-1"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-1" name="fb" value="1" />
-                                        <label for="cm_star-2"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-2" name="fb" value="2" />
-                                        <label for="cm_star-3"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-3" name="fb" value="3" />
-                                        <label for="cm_star-4"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-4" name="fb" value="4" />
-                                        <label for="cm_star-5"><i class="fa"></i></label>
-                                        <input type="radio" id="cm_star-5" name="fb" value="5" />
+                            <form action="salvar_feedback.php" method="POST">
+                                <!-- Project Card Example -->
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">Feedback para melhorar o nosso
+                                            sistema</h6>
                                     </div>
-                                    
-                                <div class="card-body">
-                                    <p><h5>Sugestões de melhorias (se houver)</h5></p>
-                                    <textarea id="editor"
-                                        placeholder="Se você sentiu que algo poderia ser melhorado, essa é a oportunidade de expressar suas sugestões de forma construtiva…"></textarea>
+                                    <script src="js/tinymce/tinymce.min.js"></script>
+                                    <script>
+                                        tinymce.init({
+                                            selector: 'textarea',
+                                            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+                                            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+                                        });
+                                    </script>
+
+                                    <div class="card-body">
+                                        <h5 style="text-align: center;">Descrição da sua experiência</h5>
+                                        <textarea name="descricao" id="descricao"
+                                            placeholder="Descreva brevemente o motivo pelo qual você entrou em contato com a Polícia Civil e como foi o atendimento…"></textarea>
+                                    </div>
+
+                                    <div class="rating-section">
+                                        <h2>Avalie</h2>
+                                        <link rel="stylesheet"
+                                            href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+                                        <div class="estrelas">
+                                            <input type="radio" id="cm_star-empty" name="avaliacao" value="0" />
+                                            <label for="cm_star-1"><i class="fa"></i></label>
+                                            <input type="radio" id="cm_star-1" name="avaliacao" value="1" />
+                                            <label for="cm_star-2"><i class="fa"></i></label>
+                                            <input type="radio" id="cm_star-2" name="avaliacao" value="2" />
+                                            <label for="cm_star-3"><i class="fa"></i></label>
+                                            <input type="radio" id="cm_star-3" name="avaliacao" value="3" />
+                                            <label for="cm_star-4"><i class="fa"></i></label>
+                                            <input type="radio" id="cm_star-4" name="avaliacao" value="4" />
+                                            <label for="cm_star-5"><i class="fa"></i></label>
+                                            <input type="radio" id="cm_star-5" name="avaliacao" value="5" />
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h5>Sugestões de melhorias (se houver)</h5>
+                                        <textarea name="sugestoes" id="sugestoes"
+                                            placeholder="Se você sentiu que algo poderia ser melhorado, essa é a oportunidade de expressar suas sugestões de forma construtiva…"></textarea>
+                                    </div>
+
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">CONFIRMAR</button>
+                                    </div>
                                 </div>
-                                    <button class="confirm-button">CONFIRMAR</button>
-                                </div>
-
-
-                            </div>
-
+                            </form>
                         </div>
                         <!-- /.container-fluid -->
 
