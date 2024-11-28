@@ -1,3 +1,19 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "pcrn_bd";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM feedbacks ORDER BY data_envio DESC";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -188,6 +204,40 @@
                         </div>
                         <!-- /.container-fluid -->
 
+                        <div class="col-lg-12 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Lista de Feedbacks</h6>
+                                </div>
+                                <div class="card-body">
+                                    <?php
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<div>";
+                                            echo "<h3>Experiência:</h3><p>" . htmlspecialchars($row['descricao'], ENT_QUOTES, 'UTF-8') . "</p>";
+                                            echo "<h3>Avaliação:</h3><p>";
+                                            $avaliacao = $row['avaliacao']; // A avaliação em número de estrelas
+                                            for ($i = 1; $i <= 5; $i++) {
+                                                if ($i <= $avaliacao) {
+                                                    echo '<i class="fa fa-star" style="color: gold;"></i>'; // Estrela cheia
+                                                } else {
+                                                    echo '<i class="fa fa-star" style="color: gray;"></i>'; // Estrela vazia
+                                                }
+                                            }
+                                            echo "</p>";
+                                            echo "<h3>Sugestões:</h3><p>" . htmlspecialchars($row['sugestoes'], ENT_QUOTES, 'UTF-8') . "</p>";
+                                            echo "<h5>Enviado em: " . htmlspecialchars($row['data_envio'], ENT_QUOTES, 'UTF-8') . "</h5>";
+                                            echo "</div><hr>";
+                                        }
+                                    } else {
+                                        echo "<p>Nenhum feedback encontrado.</p>";
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                     <!-- End of Main Content -->
 
@@ -224,6 +274,12 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
 
             <!-- Bootstrap core JavaScript-->
             <script src="vendor/jquery/jquery.min.js"></script>
