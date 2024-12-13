@@ -1,7 +1,7 @@
 <?php
 $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
-$password = "Denis99656335";
+$password = "Trabaidaporra3107";
 $database = "pcrn_bd";
 
 $conn = new mysqli($servername, $username, $password, $database);

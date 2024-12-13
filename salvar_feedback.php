@@ -2,7 +2,7 @@
 // Configuração do banco de dados
 $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
-$password = "Denis99656335";
+$password = "Trabaidaporra3107";
 $database = "pcrn_bd";
 
 // Estabelece a conexão com o banco de dados
