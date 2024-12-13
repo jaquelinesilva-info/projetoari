@@ -13,13 +13,6 @@ if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
 
-// Testa a conexão
-if ($conn->ping()) {
-    echo 'Conexão bem-sucedida com o banco de dados!';
-} else {
-    echo 'Falha na conexão com o banco de dados!';
-}
-
 // Verifica se os dados foram enviados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recebe os dados do formulário
@@ -39,10 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: feedback.php?error=1");
     }
 
-    // Fecha o statement
+    // Fecha a conexão
     $stmt->close();
+    $conn->close();
 }
-
-// Fecha a conexão
-$conn->close();
 ?>
+
