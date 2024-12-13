@@ -1,9 +1,9 @@
 <?php
 // Configuração do banco de dados
-$servername = "localhost";
-$username = "root"; // Substitua pelo seu usuário
-$password = ""; // Substitua pela sua senha
-$dbname = "pcrn_bd"; // Substitua pelo nome do seu banco
+$servername = "db-pcrn.mysql.database.azure.com";
+$username = "pcrnbd";
+$password = "Denis99656335";
+$database = "pcrn_bd";
 
 // Conexão com o banco de dados
 $conn = new mysqli($servername, $username, $password, $dbname);
