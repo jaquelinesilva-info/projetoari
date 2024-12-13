@@ -82,7 +82,7 @@ $result = $conn->query($sql);
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="missoes.html">
-                    <i class="fas fa-fw fa-bookmark"></i>
+                    <i class="fas fa-fw fa-trophy"></i>
                     <span>Missões</span></a>
             </li>
             <li class="nav-item active">
