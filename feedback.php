@@ -12,6 +12,17 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
+// Configurações SSL
+mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
+
+if ($conn->ping()) {
+    echo 'Conexão bem-sucedida com o banco de dados usando SSL!';
+} else {
+    echo 'Falha na conexão com o banco de dados!';
+}
+
+$conn->close();
+
 // Criar a tabela caso não exista
 $sql_create_table = "
 CREATE TABLE IF NOT EXISTS `feedbacks` (

@@ -14,6 +14,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
+// Configurações SSL
+mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
+
+if ($conn->ping()) {
+    echo 'Conexão bem-sucedida com o banco de dados usando SSL!';
+} else {
+    echo 'Falha na conexão com o banco de dados!';
+}
+
+$conn->close();
 
 // Verifica se os dados foram enviados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
