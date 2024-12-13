@@ -3,16 +3,9 @@ $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
 $password = "Denis99656335";
 $database = "pcrn_bd";
-$ssl_ca = 'DigiCertGlobalRootG2.crt.pem';  // Certificado SSL
 
 // Criando conexão
-$conn = new mysqli();
-
-// Configurações SSL
-$conn->ssl_set(NULL, NULL, $ssl_ca, NULL, NULL);
-
-// Estabelecendo a conexão com o banco de dados
-$conn->real_connect($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Verificando a conexão
 if ($conn->connect_error) {
@@ -21,7 +14,7 @@ if ($conn->connect_error) {
 
 // Verificando a conexão
 if ($conn->ping()) {
-    echo 'Conexão bem-sucedida com o banco de dados usando SSL!<br>';
+    echo 'Conexão bem-sucedida com o banco de dados!<br>';
 } else {
     echo 'Falha na conexão com o banco de dados!<br>';
 }
@@ -61,6 +54,7 @@ if ($result->num_rows > 0) {
 // Fechar a conexão
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
