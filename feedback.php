@@ -3,7 +3,7 @@ $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
 $password = "Denis99656335";
 $database = "pcrn_bd";
-
+$ssl_ca = 'DigiCertGlobalRootG2.crt.pem';
 // Criando conexão
 $conn = new mysqli($servername, $username, $password, $database);
 
