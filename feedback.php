@@ -3,25 +3,28 @@ $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
 $password = "Denis99656335";
 $database = "pcrn_bd";
-$ssl_ca = 'DigiCertGlobalRootG2.crt.pem';
+$ssl_ca = 'DigiCertGlobalRootG2.crt.pem';  // Certificado SSL
+
 // Criando conexão
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli();
+
+// Configurações SSL
+$conn->ssl_set(NULL, NULL, $ssl_ca, NULL, NULL);
+
+// Estabelecendo a conexão com o banco de dados
+$conn->real_connect($servername, $username, $password, $database);
 
 // Verificando a conexão
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Configurações SSL
-mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
-
+// Verificando a conexão
 if ($conn->ping()) {
-    echo 'Conexão bem-sucedida com o banco de dados usando SSL!';
+    echo 'Conexão bem-sucedida com o banco de dados usando SSL!<br>';
 } else {
-    echo 'Falha na conexão com o banco de dados!';
+    echo 'Falha na conexão com o banco de dados!<br>';
 }
-
-$conn->close();
 
 // Criar a tabela caso não exista
 $sql_create_table = "
@@ -45,6 +48,18 @@ if ($conn->query($sql_create_table) === TRUE) {
 // Buscar os feedbacks
 $sql = "SELECT * FROM feedbacks ORDER BY data_envio DESC";
 $result = $conn->query($sql);
+
+// Exibir os feedbacks
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "ID: " . $row["id"]. " - Descrição: " . $row["descricao"]. " - Avaliação: " . $row["avaliacao"]. " - Sugestões: " . $row["sugestoes"]. "<br>";
+    }
+} else {
+    echo "Nenhum feedback encontrado.<br>";
+}
+
+// Fechar a conexão
+$conn->close();
 ?>
 
 <!DOCTYPE html>

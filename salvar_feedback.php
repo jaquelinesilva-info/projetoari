@@ -4,26 +4,26 @@ $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
 $password = "Denis99656335";
 $database = "pcrn_bd";
-$ssl_ca = 'DigiCertGlobalRootG2.crt.pem';
+$ssl_ca = '/caminho/para/o/certificado/DigiCertGlobalRootG2.crt.pem'; // Caminho para o certificado
 
+// Configurações de conexão com SSL
+$conn = new mysqli();
+$conn->ssl_set(NULL, NULL, $ssl_ca, NULL, NULL);
 
-// Conexão com o banco de dados
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Estabelece a conexão com o banco de dados
+$conn->real_connect($servername, $username, $password, $database, 3306);
 
 // Verifica a conexão
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
-// Configurações SSL
-mysqli_ssl_set($conn, NULL, NULL, $ssl_ca, NULL, NULL);
 
+// Testa a conexão
 if ($conn->ping()) {
     echo 'Conexão bem-sucedida com o banco de dados usando SSL!';
 } else {
     echo 'Falha na conexão com o banco de dados!';
 }
-
-$conn->close();
 
 // Verifica se os dados foram enviados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -44,8 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: feedback.php?error=1");
     }
 
-    // Fecha a conexão
+    // Fecha o statement
     $stmt->close();
-    $conn->close();
 }
+
+// Fecha a conexão
+$conn->close();
 ?>
