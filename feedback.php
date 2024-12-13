@@ -1,7 +1,7 @@
 <?php
 $servername = "pcrn-server.mysql.database.azure.com";
 $username = "ahmmucgqjh";
-$password = 'cH$IfG8tVXr5Jb1y';
+$password = "Denis99656335";
 $database = "pcrn_bd";
 
 // Criando conexão
