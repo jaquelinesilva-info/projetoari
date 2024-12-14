@@ -1,33 +1,59 @@
-
 /* Estilo para os cards e o carrossel */
 .carousel-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 40px 0; /* Ajuste o espaço conforme necessário */
-    overflow: hidden; /* Esconder qualquer rolagem */
+    margin: 40px 0;
+    /* Ajuste o espaço conforme necessário */
+    overflow: hidden;
+    /* Esconder qualquer rolagem */
 }
 
 
 
 .carousel.delegacias-carousel-inner,
-.carousel.especializadas-carousel-inner,.carousel.especializadas-carousel-inner-2 {
+.carousel.especializadas-carousel-inner,
+.carousel.especializadas-carousel-inner-2 {
     display: flex;
-    overflow: hidden; /* Esconde a barra de rolagem */
-    width: 100%; /* Ajusta a largura do carrossel */
+    overflow: hidden;
+    /* Esconde a barra de rolagem */
+    width: 100%;
+    /* Ajusta a largura do carrossel */
 }
 
 
 .card {
-    background-color: #ecf0f1;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 5px; /* Ajustando margens para evitar excesso */
-    flex: 0 0 calc(33.33% - 10px); /* Ajuste para exibir 3 cards por vez */
-    box-sizing: border-box; /* Inclui padding e border na largura total */
+    margin: 0 5px;
+    /* Ajustando margens para evitar excesso */
+    flex: 0 0 calc(33.33% - 10px);
+    /* Exibir 3 cards por vez em telas grandes */
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
     text-align: center;
+    transition: all 0.3s ease;
+    /* Animação para suavizar o redimensionamento */
 }
+
+/* Media Query para telas médias (tablets, entre 768px e 1024px) */
+@media (max-width: 1024px) {
+    .card {
+        flex: 0 0 calc(50% - 10px);
+        /* Exibir 2 cards por vez */
+    }
+}
+
+/* Media Query para telas pequenas (smartphones, abaixo de 768px) */
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 100%;
+        /* Exibir 1 card por vez */
+    }
+}
+
 
 .carousel-btn {
     background-color: #00A859;
@@ -58,6 +84,3 @@
 .especializadas-next-btn {
     margin-left: 20px;
 }
-
-
-
